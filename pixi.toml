@@ -1,0 +1,26 @@
+[workspace]
+authors = ["yumizsui <yumizsui@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+name = "PDBAbRenum"
+platforms = ["osx-arm64", "linux-64", "osx-64"]
+version = "0.1.0"
+description = "A tool for renumbering antibody structures in PDB files with multiple numbering schemes"
+
+[tasks]
+test = "pytest tests/ -v"
+install = "pip install -e ."
+
+[dependencies]
+python = ">=3.8,<3.12"
+biopython = ">=1.78"
+abnumber = ">=0.3.0"
+pip = "*"
+
+[feature.dev.dependencies]
+pytest = ">=7.0"
+pytest-cov = ">=4.0"
+black = ">=23.0"
+ruff = ">=0.1"
+
+[environments]
+dev = ["dev"]
